@@ -13,11 +13,11 @@ function sortColumn(colNum, type) {
     const rowsArr = [].slice.call(tbody.rows);
     if (type === 'number') {
         rowsArr.sort((rowA, rowB) => {
-            return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+            return rowA.cells[colNum].textContent - rowB.cells[colNum].textContent;
         });
     } else if (type === 'string') {
         rowsArr.sort((rowA, rowB) => {
-            return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML;
+            return rowA.cells[colNum].textContent > rowB.cells[colNum].textContent ? 1 : -1;
         });
     }
 
